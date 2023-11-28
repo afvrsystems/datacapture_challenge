@@ -6,6 +6,12 @@ from src.stats_builder.main import StatsBuilder
 
 
 class DataCapture(AbstractDataCapture):
+    """Captures integer values and builds statistical operators.
+
+    Args:
+        stats_builder (AbstractStatsBuilder, optional): an instance of the statistical operator.
+    """
+
     def __init__(self, stats_builder: AbstractStatsBuilder = None) -> None:
         self.stats_builder = stats_builder or StatsBuilder()
         self.values = deque()

@@ -3,13 +3,15 @@ from collections import deque
 
 
 class AbstractStatsBuilder(ABC):
+    """This is a blueprint for statistical operator classes."""
+
     @abstractmethod
     def __init__(self) -> None:
-        """Applies statistical operations on data."""
+        ...
 
     @abstractmethod
     def load_data(self, values: deque) -> None:
-        """Loads the data.
+        """Loads the data that is going to be operated.
 
         Args:
             values (deque): the queue of captured values.
