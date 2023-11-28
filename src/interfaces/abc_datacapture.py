@@ -26,3 +26,13 @@ class AbstractDataCapture(ABC):
         Returns:
             AbstractStatsBuilder: an instance that applies statistical operations on captured data.
         """
+
+    @staticmethod
+    def get_histogram(values: list[int]):
+        histogram = {}
+        for val in values:
+            if histogram.get(val, None):
+                histogram[val] += 1
+            else:
+                histogram[val] = 1
+        return histogram
