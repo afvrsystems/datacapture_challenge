@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from collections import deque
 
 
 class AbstractStatsBuilder(ABC):
@@ -7,11 +8,11 @@ class AbstractStatsBuilder(ABC):
         """Applies statistical operations on data."""
 
     @abstractmethod
-    def load_data_freqs(self, data_freqs: dict[int, int]) -> None:
-        """Loads the data frequencies (histogram).
+    def load_data(self, values: deque) -> None:
+        """Loads the data.
 
         Args:
-            data_freqs (dict[int, int]): the data's histogram.
+            values (deque): the queue of captured values.
         """
 
     @abstractmethod
