@@ -1,8 +1,8 @@
 from collections import deque
 
-from src.interfaces.abc_datacapture import AbstractDataCapture
-from src.interfaces.abc_statsbuilder import AbstractStatsBuilder
-from src.stats_builder.main import StatsBuilder
+from capture.interfaces.abc_datacapture import AbstractDataCapture
+from capture.interfaces.abc_statsbuilder import AbstractStatsBuilder
+from capture.stats_builder.main import StatsBuilder
 
 
 class DataCapture(AbstractDataCapture):
@@ -10,6 +10,7 @@ class DataCapture(AbstractDataCapture):
 
     Args:
         stats_builder (AbstractStatsBuilder, optional): an instance of the statistical operator.
+            It instantiates automatically a StatsBuilder by default.
     """
 
     def __init__(self, stats_builder: AbstractStatsBuilder = None) -> None:

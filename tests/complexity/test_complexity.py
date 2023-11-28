@@ -3,8 +3,8 @@ from random import randint
 import numpy as np
 import pytest
 
-from src.data_capture.main import DataCapture
-from src.stats_builder.main import StatsBuilder
+from capture.data_capture.main import DataCapture
+from capture.stats_builder.main import StatsBuilder
 from tests.timing_tools import get_timing
 
 

@@ -1,8 +1,8 @@
 from pytest import FixtureRequest, fixture
 
-from src.data_capture.main import DataCapture
-from src.interfaces.abc_datacapture import AbstractDataCapture
-from src.interfaces.abc_statsbuilder import AbstractStatsBuilder
+from capture.data_capture.main import DataCapture
+from capture.interfaces.abc_datacapture import AbstractDataCapture
+from capture.interfaces.abc_statsbuilder import AbstractStatsBuilder
 
 
 @fixture

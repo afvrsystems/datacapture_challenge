@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.interfaces.abc_statsbuilder import AbstractStatsBuilder
+from capture.interfaces.abc_statsbuilder import AbstractStatsBuilder
 
 
 class AbstractDataCapture(ABC):

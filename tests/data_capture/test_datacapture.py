@@ -1,5 +1,5 @@
-from src.data_capture.main import DataCapture
-from src.interfaces.abc_statsbuilder import AbstractStatsBuilder
+from capture.data_capture.main import DataCapture
+from capture.interfaces.abc_statsbuilder import AbstractStatsBuilder
 
 
 def test_data_capture_values():
