@@ -1,18 +1,18 @@
 import pytest
 
-from tests.stats_builder.test_data import data_for_testing
+from tests.test_data import data_for_testing
 
 
 @pytest.mark.parametrize(
-    "get_captured_data,less_dict,greater_dict,hist,inputs,expected",
+    "get_captured_data,max_value,less_dict,hist,inputs,expected",
     data_for_testing,
     indirect=["get_captured_data"],
 )
 def test_statsbuilder_less(
     get_stats_operator,
     get_captured_data,
+    max_value,
     less_dict,
-    greater_dict,
     hist,
     inputs,
     expected,
@@ -21,15 +21,15 @@ def test_statsbuilder_less(
 
 
 @pytest.mark.parametrize(
-    "get_captured_data,less_dict,greater_dict,hist,inputs,expected",
+    "get_captured_data,max_value,less_dict,hist,inputs,expected",
     data_for_testing,
     indirect=["get_captured_data"],
 )
 def test_statsbuilder_greater(
     get_stats_operator,
     get_captured_data,
+    max_value,
     less_dict,
-    greater_dict,
     hist,
     inputs,
     expected,
@@ -38,15 +38,15 @@ def test_statsbuilder_greater(
 
 
 @pytest.mark.parametrize(
-    "get_captured_data,less_dict,greater_dict,hist,inputs,expected",
+    "get_captured_data,max_value,less_dict,hist,inputs,expected",
     data_for_testing,
     indirect=["get_captured_data"],
 )
 def test_statsbuilder_between(
     get_stats_operator,
     get_captured_data,
+    max_value,
     less_dict,
-    greater_dict,
     hist,
     inputs,
     expected,
@@ -55,22 +55,22 @@ def test_statsbuilder_between(
 
 
 @pytest.mark.parametrize(
-    "get_captured_data,less_dict,greater_dict,hist,inputs,expected",
+    "get_captured_data,max_value,less_dict,hist,inputs,expected",
     data_for_testing,
     indirect=["get_captured_data"],
 )
 def test_statsbuilder_load_data(
     get_stats_operator,
     get_captured_data,
+    max_value,
     less_dict,
-    greater_dict,
     hist,
     inputs,
     expected,
 ):
     assert get_stats_operator.less_than_index == less_dict
-    assert get_stats_operator.greater_than_index == greater_dict
     assert get_stats_operator.histogram == hist
+    assert get_stats_operator.max_value == max_value
 
 
 def test_monad_pattern(get_captured_data):

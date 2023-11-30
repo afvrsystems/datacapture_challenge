@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from collections import deque
 
 
 class AbstractStatsBuilder(ABC):
@@ -10,11 +9,12 @@ class AbstractStatsBuilder(ABC):
         ...
 
     @abstractmethod
-    def load_data(self, values: deque) -> None:
+    def load_data(self, histogram: dict, max_value: int) -> None:
         """Loads the data that is going to be operated.
 
         Args:
-            values (deque): the queue of captured values.
+            histogram (dict): the histogram of frequencies that defines how often the values appear.
+            max_value (int): the maximum captured value.
         """
 
     @abstractmethod
